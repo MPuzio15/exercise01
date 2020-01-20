@@ -10,9 +10,11 @@ var allPersons = [{
 }];
 
 window.onload = () => {
-
+const buttonAdd = document.getElementById("addBtn");
+const allPersons = [];
+buttonAdd.addEventListener("click",event => {
+    event.preventDefault();
+let 
+});
 }
 
-function generateList(tab) {
-
-}
