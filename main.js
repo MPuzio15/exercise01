@@ -26,7 +26,7 @@ window.onload = () => {
     if (mailRegex.test(email)) {
       console.log("E-mail is ok");
     } else {
-      console.log("Not correct e-mail format");
+      console.log("Incorrect e-mail format");
     }
   }
   function validateRequiredInputs() {
@@ -44,6 +44,18 @@ window.onload = () => {
       }
     });
   }
+
+//   function goToTheNextInput() {
+//     var inputs = document.querySelectorAll("input");
+//     inputs.forEach(
+//       (element, index).addEventListener("focusout", function swapInputField() {
+//         var nextInput = element.indexOf(index + 1);
+//         nextInput.();
+//       })
+//     );
+  }
+
   checkEmail();
   validateRequiredInputs();
+  goToTheNextInput();
 };
