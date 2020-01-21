@@ -9,15 +9,16 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="main.js"></script>
+    <script language="JavaScript1.2" src="tablesort-min.js"></script>
 </head>
 
 <body>
     <form>
         <label>*Name:</label></br>
-        <input type="text" id="name" placeholder="Name:"></br>
+        <input type="text" id="name" required placeholder="Name:"></br>
         
         <label>*Last name:</label></br>
-        <input type="text" id= "lastname" placeholder="Last Name"></br>
+        <input type="text" id= "lastname" required placeholder="Last Name"></br>
         <label>Gender:</label>
         <select id="gender">
             <option value="male">Male</option>
@@ -29,16 +30,16 @@
         <input id="email" type="email"></br>
         <span> * - required field</span></br>
 
-        <button id="addBtn">Add</button>
+        <button type="submit" id="addBtn">Add</button>
     </form>
 
     <section>
-        <table class="w3-table-all w3-hoverable">
+        <table  class="w3-table-all w3-hoverable">
             <thead>
 
             <tr class="w3-light-grey">
                 <th>Name</th>
-                <th>Last name</th>
+                <th class="nocase">Last name</th>
                 <th>Gender</th>
                 <th>Phone</th>
                 <th>e-mail</th>
