@@ -29,9 +29,9 @@ window.onload = () => {
   }
 
   function validateRequiredInputs(input) {
-    const inputRegex = /^.+/s;
-    if (input == "") {
-      // if (input === "" || inputRegex.test(input)) {
+    const inputRegex = /^.+$/s;
+    // if (input == "") {
+      if (input === "" || !inputRegex.test(input)) {
       return false;
     } else {
       return true;
