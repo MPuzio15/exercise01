@@ -15,10 +15,11 @@
 <body>
     <form>
         <label>*Name:</label></br>
-        <input type="text" id="name" required placeholder="Name:"></br>
-        
+        <input type="text" id="name" class ="required" placeholder="Name:"></br>
+        <p id="nameInput"></p>
         <label>*Last name:</label></br>
-        <input type="text" id= "lastname" required placeholder="Last Name"></br>
+        <input type="text" id= "lastname" class ="required" placeholder="Last Name"></br>
+        <p id="lastNameInput"></p>
         <label>Gender:</label>
         <select id="gender">
             <option value="male">Male</option>
@@ -28,7 +29,7 @@
         <input id="phone" type="tel"><br>
         <label>e-mail</label></br>
         <input id="email" type="email"></br>
-        <span> * - required field</span></br>
+        <p class="email"></p>
 
         <button type="submit" id="addBtn">Add</button>
     </form>
