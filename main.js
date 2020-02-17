@@ -1,26 +1,66 @@
-// var allPersons = [
-//   {
-//     id: 1,
-//     name: "Artek",
-//     lastname: "Horosin",
-//     gender: "male",
-//     phone: 792804136,
-//     email: "artek.horosin@gmail.com",
-//     date: new Date()
-//   }
-// ];
-
 window.onload = () => {
-  const buttonAdd = document.getElementById("addBtn");
-  const allPersons = [];
-  buttonAdd.addEventListener("click", event => {
-    event.preventDefault();
+  let buttonAdd;
+  let allPersons = [];
+  let inputs;
+
+  let emailInput;
+  let nameInput;
+  let lastNameInput;
+  bindDOM();
+  console.log(inputs);
+  addEventListenerOnClick();
+
+  function bindDOM() {
+    buttonAdd = document.getElementById("addBtn");
+    inputs = document.querySelectorAll("input");
+    emailInput = document.getElementsByClassName("email")[0];
+    nameInput = document.getElementById("nameInput");
+    lastNameInput = document.getElementById("lastNameInput");
+  }
+  let allInputs = inputs;
+
+  function checkEmail(email) {
+    const mailRegex = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i;
+    if (mailRegex.test(email)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function validateRequiredInputs(input) {
+    const inputRegex = /^.+$/s;
+    // if (input == "") {
+    if (input === "" || !inputRegex.test(input)) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  function clearInputs(tab) {
+    tab.forEach(input => {
+      input.value = "";
+    });
+  }
+
+  function addNewElement() {
     //wartosc z input 'Name'
     let namePerson = document.getElementById("name");
     let firstName = namePerson.value;
+    if (!validateRequiredInputs(firstName)) {
+      return (nameInput.innerHTML = "This field is required");
+    } else {
+      nameInput.innerHTML = "";
+    }
     //wartosc z input 'Last name'
     let surnamePerson = document.getElementById("lastname");
     let lastName = surnamePerson.value;
+    if (!validateRequiredInputs(lastName)) {
+      return (lastNameInput.innerHTML = "This field is required");
+    } else {
+      lastNameInput.innerHTML = "";
+    }
     //wartosc z input 'gender'
     let genType = document.getElementById("gender");
     let myGender = genType.value;
@@ -29,14 +69,23 @@ window.onload = () => {
     let phoneNum = number.value;
     let myEmail = document.getElementById("email");
     let emailAdress = myEmail.value;
+    if (!checkEmail(emailAdress)) {
+      return (emailInput.innerHTML = "*niepoprawny Email");
+    } else {
+      emailInput.innerHTML = "";
+    }
     //dodaje do tablicy obiekty
     function addToArray(arr, id) {
-      arr.push({ id, firstName, lastName, myGender, phoneNum, emailAdress });
+      arr.push({
+        id,
+        firstName,
+        lastName,
+        myGender,
+        phoneNum,
+        emailAdress
+      });
       console.log(arr);
     }
-
-    addToArray(allPersons, allPersons.length + 1);
-    addElementToBody(firstName, lastName, myGender, phoneNum, emailAdress);
     //dodaje tbody tabelki
     function addElementToBody(name, surname, gen, phone, email) {
       const tbody = document.getElementsByTagName("tbody")[0];
@@ -67,48 +116,23 @@ window.onload = () => {
       tdata6.innerText = new Date();
       trow.appendChild(tdata6);
     }
-  });
-
-  function checkEmail() {
-    let email = document.getElementById("email");
-    email = email.value;
-    console.log(email);
-    const mailRegex = /^[0-9a-z_.-]+@[0-9a-z.-]+\.[a-z]{2,3}$/i;
-    if (mailRegex.test(email)) {
-      console.log("E-mail is ok");
-    } else {
-      console.log("Not correct e-mail format");
-    }
+    addToArray(allPersons, allPersons.length + 1);
+    addElementToBody(firstName, lastName, myGender, phoneNum, emailAdress);
+    clearInputs(allInputs);
   }
-  function validateRequiredInputs() {
-    var requiredInputs = document.querySelectorAll("[required]");
-    console.log(requiredInputs);
 
-    requiredInputs.forEach(element => {
-      var input = element.value;
-      var inputRegex = /^.+/s;
-      if (input === "" || inputRegex.test(input)) {
-        alert(
-          "At least the required fields have to be filled in to add the person"
-        );
-        return;
+  function addEventListenerOnClick() {
+    buttonAdd.addEventListener("click", event => {
+      event.preventDefault();
+      addNewElement();
+    });
+
+    buttonAdd.addEventListener("keypress", event => {
+      event.preventDefault();
+      if (event.key === "Enter") {
+        addNewElement();
       }
     });
   }
-  checkEmail();
-  validateRequiredInputs();
-
-
-  //   function goToTheNextInput() {
-  //     var inputs = document.querySelectorAll("input");
-  //     inputs.forEach(
-  //       (element, index).addEventListener("focusout", function swapInputField() {
-  //         var nextInput = element.indexOf(index + 1);
-  //         nextInput.();
-  //       })
-  //     );
-  //   }
   
-
-//   goToTheNextInput();
 };

@@ -1,4 +1,6 @@
 form {
     display: grid
 };
-
+.email, #lastNameInput, #nameInput{
+    color: red;
+}
