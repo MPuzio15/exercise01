@@ -44,23 +44,23 @@ window.onload = () => {
       tbody.appendChild(trow);
       //pierwsza komorka
       tdata1 = document.createElement("td");
-      tdata1.innerText = firstName;
+      tdata1.innerText = name;
       trow.appendChild(tdata1);
       //druga komorka
       tdata2 = document.createElement("td");
-      tdata2.innerText = lastName;
+      tdata2.innerText = surname;
       trow.appendChild(tdata2);
       //trzecia komorka
       tdata3 = document.createElement("td");
-      tdata3.innerText = myGender;
+      tdata3.innerText = gen;
       trow.appendChild(tdata3);
       //czwarta komorka
       tdata4 = document.createElement("td");
-      tdata4.innerText = phoneNum;
+      tdata4.innerText = phone;
       trow.appendChild(tdata4);
       //piata komorka
       tdata5 = document.createElement("td");
-      tdata5.innerText = emailAdress;
+      tdata5.innerText = email;
       trow.appendChild(tdata5);
       //szósta komorka
       tdata6 = document.createElement("td");
@@ -108,6 +108,7 @@ window.onload = () => {
   //       })
   //     );
   //   }
+  
 
 //   goToTheNextInput();
 };

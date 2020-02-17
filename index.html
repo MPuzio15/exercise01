@@ -10,27 +10,38 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="main.js"></script>
     <script language="JavaScript1.2" src="tablesort-min.js"></script>
+    <style>
+        label {
+            font-weight: bold
+        };
+    </style>
 </head>
 
 <body>
     <form>
         <label>*Name:</label></br>
-        <input type="text" id="name" required placeholder="Name:"></br>
-        
+        <input type="text" id="name" required placeholder="Name:" class="w3-input w3-border w3-round w3-third"></br>
+    
         <label>*Last name:</label></br>
-        <input type="text" id= "lastname" required placeholder="Last Name"></br>
-        <label>Gender:</label>
-        <select id="gender">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select></br>
-        <label>Phone number</label>
-        <input id="phone" type="tel"><br>
-        <label>e-mail</label></br>
-        <input id="email" type="email"></br>
-        <span> * - required field</span></br>
+        <input type="text" id= "lastname" required placeholder="Last Name:" class="w3-input w3-border w3-round w3-third"></br>
 
-        <button type="submit" id="addBtn">Add</button>
+        <label>Gender:</label>
+
+        <select id="gender" class="w3-input w3-border w3-round w3-third">
+            <option value="male" class="w3-input w3-border w3-round w3-third">Male</option>
+            <option value="female" class="w3-input w3-border w3-round w3-third">Female</option>
+        </select>
+
+        <label>Phone number</label>
+
+        <input id="phone" type="tel" class="w3-input w3-border w3-round w3-third"><br>
+        <label>e-mail</label>
+    
+        <input id="email" type="email" class="w3-input w3-border w3-round w3-third">
+    
+        <span> * - required field</span>
+
+        <button type="submit" id="addBtn" class="w3-button w3-blue">Add</button>
     </form>
 
     <section>
@@ -51,15 +62,22 @@
     </section>
     <div class="w3-center">
                 <div class="w3-bar w3-border">
-        <button>10</button>
-        <button>20</button>
-        <button>50</button>
-        <button>All</button>
+        <button class="w3-button w3-blue">10</button>
+        <button class="w3-button w3-blue">20</button>
+        <button class="w3-button w3-blue">50</button>
+        <button class="w3-button w3-blue">All</button>
           
         
         </div>
         </div>
-        
+
+        <!-- input form grupowanie  -->
+        <!-- <div>
+            <label></label>
+            <input>
+            <span>error</span>
+        </div> -->
+
 </body>
 
 </html>
