@@ -13,6 +13,9 @@
       label {
         font-weight: bold;
       }
+      .hidensection {
+        visibility: hidden;
+      }
     </style>
   </head>
 
@@ -65,7 +68,9 @@
 
       <span> * - required field</span>
 
-      <button type="submit" id="addBtn" class="w3-button w3-blue w3-third">Add</button>
+      <button type="submit" id="addBtn" class="w3-button w3-blue w3-third">
+        Add
+      </button>
     </form>
 
     <section>
@@ -85,18 +90,20 @@
     </section>
     <div class="w3-center">
       <div class="w3-bar w3-border">
-        <button class="w3-button w3-blue">10</button>
-        <button class="w3-button w3-blue">20</button>
-        <button class="w3-button w3-blue">50</button>
-        <button class="w3-button w3-blue">All</button>
+        <button class="w3-button w3-blue count">10</button>
+        <button class="w3-button w3-blue count">20</button>
+        <button class="w3-button w3-blue count">50</button>
+        <button class="w3-button w3-blue count">All</button>
       </div>
     </div>
-
-    <!-- input form grupowanie  -->
-    <!-- <div>
-            <label></label>
-            <input>
-            <span>error</span>
-        </div> -->
+    <div class="w3-center">
+      <div id="pageButtonContainer">
+        <button id="nextButton1" class="hidensection">1>></button>
+        <button id="nextButton2" class="hidensection">2>></button>
+        <button id="nextButton3" class="hidensection">3>></button>
+        <button id="nextButton4" class="hidensection">4>></button>
+        <button id="nextButton5" class="hidensection">5>></button>
+      </div>
+    </div>
   </body>
 </html>
